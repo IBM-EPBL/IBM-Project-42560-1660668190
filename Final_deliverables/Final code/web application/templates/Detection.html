@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Detection page</title>
+        <style>
+            body {
+              background-image: url('https://wallpaperaccess.com/full/1817788.jpg');
+              background-size: 100%;
+              margin: 0;
+              font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+              height: 100%;
+              width: 100%;
+            }
+            h1 {
+                display: block;
+                font-size: 3.5em;
+                margin-top: 0em;
+                margin-bottom: 0em;
+                margin-left: 50%;
+                margin-right: 0;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            
+            .button {
+                border:#e5b9f3;
+                color: rgb(56, 1, 69);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                }
+
+            .button1 {
+                background-color: #0de174;
+                margin-top: 5.4em;
+                margin-left: 56%;
+                margin-right: 0;
+                border: black;
+            } 
+            .button2 {
+                background-color: #1dcc4f;
+                margin-top: 5.5em;
+                margin-left: 55%;
+                margin-right: 0;
+                border: black;
+            } 
+        </style>
+        <script>
+            function preview() {
+                frame.src=URL.createObjectURL(event.target.files[0]);
+            }
+
+            $(document).ready(function() {
+                $('#clear_button').on('click', function() {
+                $('#image').val('');
+                $('#frame').attr('src',"");
+             });
+            });
+            var input = document.getElementById('image');
+            var infoArea = document.getElementById('frame');
+
+            input.addEventListener('change', showFileName);
+
+            function showFileName(event) {
+                var input = event.srcElement;
+                var fileName = input.files[0].name;
+                infoArea.textContent = 'File name: ' + fileName;
+            }
+
+        </script>
+        <script src="https://kit.fontawesome.com/b3aed9cb07.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+       
+    </head>
+    <body>
+        <h1 style = "color: rgb(251, 247, 246)">Detection of Forest Fire
+            <br>
+            
+        <br>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input id="image" type="file" name="image" accept="image/png, image/jpeg" onchange="preview()"><br><br>
+        <img id="frame" src="" width="100px" height="100px"/>
+        </h1>
+        <button type="submit" class="button button2" id="predict_button" onclick="predict.html">Detection</button>
+        </form>
+    </body>
+</html>
