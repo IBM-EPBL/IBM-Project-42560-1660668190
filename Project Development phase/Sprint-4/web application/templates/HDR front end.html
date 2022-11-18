@@ -1,0 +1,58 @@
+`<html>
+    <head>
+        <title>Early Detection OF Forestfire</title>
+        <style>
+             .top{
+                display: inline-block;
+                text-decoration: none;
+                text-decoration-line: none;
+                padding-left: 70%;
+                margin-top: 20px;
+                font-size: 18px;
+                width:100%;
+                background-color: gray;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .home{
+                padding-right: 40px;
+            }
+            .home, .reg{
+                color:rgb(252, 244, 244);
+                text-decoration: none;
+                font-size: 20px;
+            }
+            .heading{
+                text-align: center;
+                color:rgb(234, 234, 29);
+            }
+            body{
+                background-image: url("https://wallpaperaccess.com/full/437922.jpg");
+                background-size: 100%;
+            }
+            .content{
+                color: rgb(233, 204, 38);
+                margin-top: 50px;
+                text-align: center;
+                font-size: 30px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        </style>   
+    </head>
+
+    <body>
+        <div class="top">
+            <a href="{{ url_for('Detection') }}" class="home">Go for Detection page</a>
+            <a href="" class="reg">Home</a>
+        </div>
+        <div class="heading">
+            <h1>Early Detection of Forestfire</h1>
+
+        </div>
+        <div class="content">
+            <p>Forest fires are a major environmental issue, creating economic and ecological damage while endangering human lives. There are typically about 100,000 wildfires in the United States every year. Over 9 million acres of land have been destroyed due to treacherous wildfires. It is difficult to predict and detect Forest Fire in a sparsely populated forest area and it is more difficult if the prediction is done using ground-based methods like Camera or Video-Based approach. Satellites can be an important source of data prior to and also during the Fire due to its reliability and efficiency. The various real-time forest fire detection and prediction approaches, with the goal of informing the local fire authorities.
+            </p>
+        </div>
+    </body>
+</html>
